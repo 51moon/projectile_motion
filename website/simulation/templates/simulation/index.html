@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projectile Motion</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .right {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     <h1>Simulation of projectile motion with drag</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-</form>
+    <div class="container">
+        <div class="left">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
+        <div class="right">
+            <img src="{% url 'simulation' %}" alt="Generated JPEG Image">
+        </div>
+    </div>
 </body>
 </html>
