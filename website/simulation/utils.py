@@ -45,7 +45,7 @@ def simulation(request):
     # Read the parameters from the input fields.
     height = simulation_parameters['height']
     velocity = simulation_parameters['velocity']
-    angle = simulation_parameters['angle']
+    angle = math.radians(simulation_parameters['angle'])
     mass = simulation_parameters['mass']
     cwArho = simulation_parameters['cwArho']
     xmax = simulation_parameters['xmax']
@@ -56,7 +56,7 @@ def simulation(request):
 
     # Set the initial state vector at time t=0.
     r0 = np.array([0, height])
-    v0 = velocity * np.array([math.cos(np.deg2rad(angle)), math.sin(np.deg2rad(angle))])
+    v0 = velocity * np.array([math.cos(angle), math.sin(angle)])
     u0 = np.concatenate((r0, v0))
 
     def differential_eq(t, u):
@@ -92,7 +92,8 @@ def simulation(request):
     x = r[0]
     y = r[1]
 
-    plt.figure(figsize=(8, 6))
+    px = 1/plt.rcParams['figure.dpi']
+    plt.figure(figsize=(600*px, 450*px))
     plt.plot(x, y)
     plt.title('Trajectory')
     plt.xlabel('x/m')
