@@ -14,6 +14,7 @@ WORKDIR /code
 
 # Apply Django migrations
 RUN python website/manage.py migrate
+RUN python website/manage.py loaddata initial_simulation_data.json
 
 EXPOSE 8000
 
