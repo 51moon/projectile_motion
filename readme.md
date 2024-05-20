@@ -3,7 +3,7 @@
 This project uses [Django](https://www.djangoproject.com/) and [Docker](https://www.docker.com/) to display a simulation of the inclined throw with friction in a web application.
 
 ## Prerequisites
-- [Python](https://www.python.org/)
+- [Python](https://www.python.org/) version 3.10.12
 - [Docker](https://docs.docker.com/engine/install/)
 
 ## Setup
