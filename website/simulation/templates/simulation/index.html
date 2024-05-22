@@ -15,32 +15,32 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="id_height">Height in m:</label>
-                    <input type="number" id="id_height" name="height" value="{{ form.height.value }}">
+                    <label for="id_height">Height in m: <output id="height_output">{{ form.height.value }}</output></label>
+                    <input type="range" id="id_height" name="height" min="0.1" max="10" step="0.1" value="{{ form.height.value }}" oninput="document.getElementById('height_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_velocity">Velocity in m/s:</label>
-                    <input type="number" id="id_velocity" name="velocity" value="{{ form.velocity.value }}">
+                    <label for="id_velocity">Velocity in m/s: <output id="velocity_output">{{ form.velocity.value }}</output></label>
+                    <input type="range" id="id_velocity" name="velocity" min="0.5" max="50" step="0.5" value="{{ form.velocity.value }}" oninput="document.getElementById('velocity_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_angle">Angle in °:</label>
-                    <input type="number" id="id_angle" name="angle" value="{{ form.angle.value }}">
+                    <label for="id_angle">Angle in °: <output id="angle_output">{{ form.angle.value }}</output></label>
+                    <input type="range" id="id_angle" name="angle" min="0" max="89" step="1" value="{{ form.angle.value }}" oninput="document.getElementById('angle_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_mass">Mass in kg:</label>
-                    <input type="number" id="id_mass" name="mass" value="{{ form.mass.value }}">
+                    <label for="id_mass">Mass in kg: <output id="mass_output">{{ form.mass.value }}</output></label>
+                    <input type="range" id="id_mass" name="mass" min="1" max="50" step="1" value="{{ form.mass.value }}" oninput="document.getElementById('mass_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_cwArho">Friction Factor in kg/m:</label>
-                    <input type="number" id="id_cwArho" name="cwArho" value="{{ form.cwArho.value }}">
+                    <label for="id_cwArho">Friction Factor in kg/m: <output id="cwArho_output">{{ form.cwArho.value }}</output></label>
+                    <input type="range" id="id_cwArho" name="cwArho" min="0" max="1" step="0.1" value="{{ form.cwArho.value }}" oninput="document.getElementById('cwArho_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_xmax">x-range in m:</label>
-                    <input type="number" id="id_xmax" name="xmax" value="{{ form.xmax.value }}">
+                    <label for="id_xmax">x-range in m: <output id="xmax_output">{{ form.xmax.value }}</output></label>
+                    <input type="range" id="id_xmax" name="xmax" min="0" max="300" step="2" value="{{ form.xmax.value }}" oninput="document.getElementById('xmax_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_ymax">y-range in m:</label>
-                    <input type="number" id="id_ymax" name="ymax" value="{{ form.ymax.value }}">
+                    <label for="id_ymax">y-range in m: <output id="ymax_output">{{ form.ymax.value }}</output></label>
+                    <input type="range" id="id_ymax" name="ymax" min="0" max="80" step="1" value="{{ form.ymax.value }}" oninput="document.getElementById('ymax_output').textContent = this.value">
                 </div>
                 <button type="submit">Submit</button>
             </form>
