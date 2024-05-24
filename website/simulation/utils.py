@@ -6,19 +6,6 @@ from django.http import HttpResponse
 from io import BytesIO
 from .models import SimulationData
 
-def save_simulation_data(form):
-    new_simulation_data = SimulationData()
-    # Populate the new instance with form data
-    new_simulation_data.height = form.cleaned_data['height']
-    new_simulation_data.velocity = form.cleaned_data['velocity']
-    new_simulation_data.angle = form.cleaned_data['angle']
-    new_simulation_data.mass = form.cleaned_data['mass']
-    new_simulation_data.cwArho = form.cleaned_data['cwArho']
-    new_simulation_data.xmax = form.cleaned_data['xmax']
-    new_simulation_data.ymax = form.cleaned_data['ymax']
-    # Save the new instance
-    new_simulation_data.save()
-
 def simulation(request):
     simulation_data = SimulationData.objects.first()
         
@@ -34,12 +21,12 @@ def simulation(request):
     def differential_eq(t, u):
         """Calculate the right-hand side of the differential equation."""
         r, v = np.split(u, 2)
-        # Air friction force.
-        Fr = -0.5 * simulation_data.cwArho * np.linalg.norm(v) * v
+        # Air drag force.
+        Fd = -0.5 * simulation_data.c_F * np.linalg.norm(v) * v
         # Gravity force.
         Fg = simulation_data.mass * g * np.array([0, -1])
         # Acceleration.
-        a = (Fr + Fg) / simulation_data.mass
+        a = (Fd + Fg) / simulation_data.mass
         return np.concatenate([v, a])
 
     def collision(t, u):
