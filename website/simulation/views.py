@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from .forms import SimulationForm
-from .utils import save_simulation_data, simulation
+from .models import SimulationData
+from .utils import simulation
 
 def index(request):
+    initial_data = SimulationData.objects.first()
     if request.method == 'POST':
-        form = SimulationForm(request.POST)    
+        form = SimulationForm(request.POST, instance=initial_data)
         if form.is_valid():
-            save_simulation_data(form)
+            form.save()
             simulation(request)
     else:
-        form = SimulationForm()
+        form = SimulationForm(instance=initial_data)
     return render(request, 'simulation/index.html', {'form': form})

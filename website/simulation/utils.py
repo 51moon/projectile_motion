@@ -6,7 +6,6 @@ from django.http import HttpResponse
 from io import BytesIO
 from .models import SimulationData
 
-
 def save_simulation_data(form):
     new_simulation_data = SimulationData()
     # Populate the new instance with form data
@@ -20,9 +19,8 @@ def save_simulation_data(form):
     # Save the new instance
     new_simulation_data.save()
 
-
 def simulation(request):
-    simulation_data = SimulationData.objects.last()
+    simulation_data = SimulationData.objects.first()
         
     # Constants
     g = 9.807
