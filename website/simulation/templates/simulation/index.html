@@ -31,8 +31,8 @@
                     <input type="range" id="id_mass" name="mass" min="1" max="50" step="1" value="{{ form.mass.value }}" oninput="document.getElementById('mass_output').textContent = this.value">
                 </div>
                 <div class="form-group">
-                    <label for="id_cwArho">Friction Factor in kg/m: <output id="cwArho_output">{{ form.cwArho.value }}</output></label>
-                    <input type="range" id="id_cwArho" name="cwArho" min="0" max="1" step="0.1" value="{{ form.cwArho.value }}" oninput="document.getElementById('cwArho_output').textContent = this.value">
+                    <label for="id_c_F">Friction Factor in kg/m: <output id="c_F_output">{{ form.c_F.value }}</output></label>
+                    <input type="range" id="id_c_F" name="c_F" min="0" max="1" step="0.1" value="{{ form.c_F.value }}" oninput="document.getElementById('c_F_output').textContent = this.value">
                 </div>
                 <div class="form-group">
                     <label for="id_xmax">x-range in m: <output id="xmax_output">{{ form.xmax.value }}</output></label>

@@ -4,4 +4,4 @@ from .models import SimulationData
 class SimulationForm(forms.ModelForm):
     class Meta:
         model = SimulationData
-        fields = ['height', 'velocity', 'angle', 'mass', 'cwArho', 'xmax', 'ymax']
+        fields = ['height', 'velocity', 'angle', 'mass', 'c_F', 'xmax', 'ymax']

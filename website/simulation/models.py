@@ -5,6 +5,6 @@ class SimulationData(models.Model):
     velocity = models.FloatField() # m/s
     angle = models.FloatField() # °
     mass = models.FloatField() # kg
-    cwArho = models.FloatField() # kg/m
+    c_F = models.FloatField() # kg/m, friction factor
     xmax = models.FloatField() # m
     ymax = models.FloatField() # m
