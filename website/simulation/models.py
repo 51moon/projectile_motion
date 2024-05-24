@@ -1,6 +1,10 @@
 from django.db import models
 
 class SimulationData(models.Model):
-    name = models.CharField(max_length=100)
-    value = models.FloatField()
-    unit = models.CharField(max_length=20)
+    height = models.FloatField() # m
+    velocity = models.FloatField() # m/s
+    angle = models.FloatField() # °
+    mass = models.FloatField() # kg
+    c_F = models.FloatField() # kg/m, friction factor
+    xmax = models.FloatField() # m
+    ymax = models.FloatField() # m

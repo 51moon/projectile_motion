@@ -1,0 +1,15 @@
+[
+    {
+      "model": "simulation.SimulationData",
+      "pk": 1,
+      "fields": {
+        "height": 1,
+        "velocity": 20,
+        "angle": 40,
+        "mass": 1,
+        "c_F": 0.5,
+        "xmax": 8,
+        "ymax": 4
+      }
+    }
+  ]

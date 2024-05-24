@@ -3,7 +3,6 @@
 import os
 import sys
 
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "website.settings")
@@ -15,8 +14,11 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    execute_from_command_line(sys.argv)
 
+    execute_from_command_line(['manage.py', 'flush', '--no-input']) # Reset the database
+    execute_from_command_line(['manage.py', 'loaddata', 'initial_simulation_data.json']) # Load initial data
+
+    execute_from_command_line(sys.argv)
 
 if __name__ == "__main__":
     main()
