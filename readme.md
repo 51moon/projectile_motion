@@ -7,9 +7,13 @@ This project uses [Django](https://www.djangoproject.com/) and [Docker](https://
 The simulation calculates the trajectory of a projectile under the influence of gravity and air resistance. It solves the following differential equation:
 $$m\ddot{\vec{r}} = \vec{F}_G + \vec{F}_D$$
 where the gravitational force $\vec{F}_G$ is given by
-$$\vec{F}_G = m \begin{pmatrix}0 \\-g\end{pmatrix}$$
+```math
+\vec{F}_G = \begin{pmatrix}0 \\ -g\end{pmatrix}
+```
 and the air drag force $\vec{F}_D$ is given by
-$$\vec{F}_D = -\frac{1}{2} c_F \left|\vec{v}\right| \begin{pmatrix}v_x \\v_y\end{pmatrix}.$$
+```math
+\vec{F}_D = -\frac{1}{2} c_F \left|\vec{v}\right| \begin{pmatrix}v_x \\v_y\end{pmatrix}.
+```
 
 ## Features
 
