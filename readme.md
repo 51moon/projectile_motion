@@ -8,7 +8,7 @@ The simulation calculates the trajectory of a projectile under the influence of 
 $$m\ddot{\vec{r}} = \vec{F}_G + \vec{F}_D$$
 where the gravitational force $\vec{F}_G$ is given by
 ```math
-\vec{F}_G = \begin{pmatrix}0 \\ -g\end{pmatrix}
+\vec{F}_G = m\begin{pmatrix}0 \\ -g\end{pmatrix}
 ```
 and the air drag force $\vec{F}_D$ is given by
 ```math
