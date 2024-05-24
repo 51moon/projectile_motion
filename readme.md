@@ -12,9 +12,9 @@ This project uses [Django](https://www.djangoproject.com/) and [Docker](https://
 - `python -m venv .venv`
 - `source .venv/bin/activate`
 - `docker build -t projectile_motion .`
-- `docker run -it -p 8000:8000 projectile_motion`
+- `docker run -it -p 8080:8080 projectile_motion`
 
-Now you can start the development server at http://0.0.0.0:8000.
+Now you can start the development server at http://0.0.0.0:8080.
 
 ## Preview
 <img src="screenshot.png" width="600">
