@@ -12,9 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . code
 WORKDIR /code
 
-# Apply Django migrations
-RUN python website/manage.py migrate
-
 EXPOSE 8000
 
 # runs the production server

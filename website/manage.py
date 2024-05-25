@@ -16,6 +16,7 @@ def main():
         ) from exc
 
     execute_from_command_line(['manage.py', 'flush', '--no-input']) # Reset the database
+    execute_from_command_line(['manage.py', 'migrate']) # Do migrations
     execute_from_command_line(['manage.py', 'loaddata', 'initial_simulation_data.json']) # Load initial data
 
     execute_from_command_line(sys.argv)
