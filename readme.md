@@ -2,6 +2,8 @@
 
 This project uses [Django](https://www.djangoproject.com/) and [Docker](https://www.docker.com/) to display a simulation of an inclined projectile motion with air resistance in a web application.
 
+<p align="center"><img src="screenshot.png" ></p>
+
 ## Overview
 
 The simulation calculates the trajectory of a projectile under the influence of gravity and air resistance. It solves the following differential equation:
@@ -24,7 +26,7 @@ and the air drag force $\vec{F}_D$ is given by
 
 ## Prerequisites
 
-- [Python](https://www.python.org/) version 3.10.12
+- [Python](https://www.python.org/) 3.12
 - [Docker](https://docs.docker.com/engine/install/)
 
 ## Setup
@@ -43,7 +45,7 @@ and the air drag force $\vec{F}_D$ is given by
 
 3. Build the Docker image:
    ```sh
-   docker build -t projectile_motion .
+   docker buildx build -t projectile_motion .
    ```
 
 4. Run the Docker container:
@@ -52,7 +54,3 @@ and the air drag force $\vec{F}_D$ is given by
    ```
 
 Now you can access the development server at [http://0.0.0.0:8080](http://0.0.0.0:8080).
-
-## Preview
-
-<img src="screenshot.png" width="600">
