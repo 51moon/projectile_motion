@@ -26,7 +26,7 @@ and the air drag force $\vec{F}_D$ is given by
 
 ## Prerequisites
 
-- [Python](https://www.python.org/) version 3.10.12
+- [Python](https://www.python.org/) 3.12
 - [Docker](https://docs.docker.com/engine/install/)
 
 ## Setup
