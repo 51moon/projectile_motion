@@ -45,7 +45,7 @@ and the air drag force $\vec{F}_D$ is given by
 
 3. Build the Docker image:
    ```sh
-   docker build -t projectile_motion .
+   docker buildx build -t projectile_motion .
    ```
 
 4. Run the Docker container:
